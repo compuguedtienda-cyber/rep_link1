@@ -1,0 +1,210 @@
+*{
+    box-sizing:border-box;
+    font-family:'Segoe UI', Arial, sans-serif;
+}
+
+body{
+    margin:0;
+    /* background:linear-gradient(160deg,#1a1f3c,#0b0f24); */
+    display:flex;
+    justify-content:center;
+    /* padding:20px; */
+
+    /* control fondo imagen; */
+    background-image: url("../img/fondo/f4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* FIN control fondo imagen; */
+}
+
+.phone{ /*toda la estructura*/
+    width:100%;
+    max-width:380px;
+    /* background:#15c40f; color fondo verde*/
+    /* border-radius:35px; */
+    overflow:hidden;
+    /* box-shadow:0 30px 70px rgba(187, 184, 184, 0.45); */
+     /*color sombra borde*/
+     background-color: pink;
+}
+
+/* ===== HEADER ===== */
+.header{
+    /* background:linear-gradient(135deg,#2b2f77,#ffa963); 2 colores fondo encabezado phone  */
+    /* padding:30px 20px 80px; Clave para responsiva */
+    padding:30px 20px 80px;
+    text-align:center;
+    color:#ffffff;
+}
+
+.avatar{ /*Control Logo*/
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    /* border:4px solid #fff; */
+    border: none;
+    object-fit: cover;
+}
+
+.header h1{ /*Texto COMPUGUED*/
+    margin:8px 0 4px;
+    font-size: 22px;
+}
+
+.header p{ /*Descripcion Breve*/
+    font-size: 14px;
+    opacity:.9;
+}
+/* FIN HEADER ===== */
+
+/* ===== SOCIAL ===== */
+.social{ /*Control bloque Redes sociales*/
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.social a{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+
+.social a:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.3);
+}
+
+.social svg{
+    width:20px;
+    fill:#fff;
+}
+/* FIN SOCIAL ===== */
+
+
+/* ===== CARD 3D ===== */
+.scene{
+    perspective:1200px;
+    margin-top:-60px;
+    display:flex;
+    justify-content:center;
+}
+
+.card{
+    width:100%;
+    max-width:320px;
+    height:350px;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform .9s cubic-bezier(.4,.2,.2,1);
+}
+
+.card.flip{
+    transform:rotateY(180deg);
+}
+
+.card-face{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 18px 35px rgba(0,0,0,.35);
+}
+
+.card-face img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card-back{
+    transform:rotateY(180deg);
+}
+/* FIN CARD 3D ===== */
+
+/* ===== BUTTON ===== */
+.btn-map{
+    margin:18px auto;
+    display:block;
+    width:30%;/*Tamaño boton*/
+    max-width:320px;
+    padding:13px;
+    /* background:#3b82f6; */
+    background:blue;
+    color:#fff;
+    border:none;
+    border-radius:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-map:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
+}
+/* FIN BUTTON ===== */
+
+
+/* 2 BOTONES ACTIONS  ===== */
+.actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    padding:15px 20px 30px;
+}
+
+.action{
+    background:blue;
+    color:#fff;
+    text-decoration:none;
+    border-radius:18px;
+    padding:16px 10px;
+    text-align:center;
+    font-size:13px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.action:hover{
+    background:#2563eb;
+    transform:translateY(-4px);
+    box-shadow:0 12px 22px rgba(0,0,0,.25);
+}
+
+.action svg{
+    width:26px;
+    fill:#fff;
+    margin-bottom:6px;
+}
+
+.action span{
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+}
+/* FIN ACTIONS ===== */
+
+
+/* ===== RESPONSIVE ===== */
+@media(min-width:768px){
+    .phone{
+        max-width:420px;
+    }
+}
+
+@media(min-width:1600px){
+    body{
+        padding:40px;
+    }
+}
