@@ -27,7 +27,7 @@ body{
     overflow:hidden;
     /* box-shadow:0 30px 70px rgba(187, 184, 184, 0.45); */
      /*color sombra borde*/
-     background-color: pink;
+     background-color: rgb(228, 61, 219);
 }
 
 /* ===== HEADER ===== */
@@ -54,7 +54,7 @@ body{
 }
 
 .header p{ /*Descripcion Breve*/
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     /* opacity:.9; */
 }
@@ -175,6 +175,7 @@ body{
     font-size:13px;
     font-weight:600;
     transition:.25s;
+    border: 2px solid #ffffff; /* grosor | estilo | color */
 }
 
 .action:hover{
@@ -194,6 +195,28 @@ body{
     font-size:11px;
     font-weight:normal;
 }
+
+
+/* BOTON-VIBRACION */
+.btn { 
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    transition: color 350ms ease-in-out, background-color 350ms ease-in-out;
+    animation: bouncy 3s infinite linear;
+}
+
+@keyframes bouncy {
+    0%, 40% { top: 0px; }
+    43% { top: -15px; }
+    46% { top: 0px; }
+    48% { top: -7px; }
+    50% { top: 0px; }
+    100% { top: 0px; }
+}
+/* FIN BOTON-VIBRACION */
+
+
 /* FIN ACTIONS ===== */
 
 
