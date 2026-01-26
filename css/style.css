@@ -102,7 +102,7 @@ body{
 .card{
     width:100%;
     max-width:320px;
-    height:230px;
+    height:220px;
     position:relative;
     transform-style:preserve-3d;
     transition:transform .9s cubic-bezier(.4,.2,.2,1);
@@ -134,25 +134,17 @@ body{
 /* FIN CARD 3D ===== */
 
 /* ===== MAPA BUTTON ===== */
-.actionsmapa{
-    display:flex;
-    
-    
-    
-}
-
 
 .btn-map{
     margin:18px auto;
     display:block;
-    width:45%;/*Tamaño boton*/
+    width:50%;/*Tamaño boton*/
     max-width:320px;
     padding:13px;
     /* background:#3b82f6; */
     background:blue;
     color:#fff;
-    border:none;
-    border-radius:14px;
+    border-radius:10px;
     font-weight:600;
     cursor:pointer;
     transition:.3s;
@@ -201,8 +193,8 @@ body{
 
 .action span{
     display:block;
-    font-size:11px;
-    font-weight:normal;
+    font-size:14px;
+    font-weight:600;
 }
 
 

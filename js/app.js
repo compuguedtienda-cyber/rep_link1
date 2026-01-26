@@ -5,7 +5,7 @@ const btn=document.getElementById('btnMap');
 function toggleCard(){
     flipped=!flipped;
     card.classList.toggle('flip');
-    btn.textContent=flipped?'PRODUCTO PROMOCION':'DIRECCION TIENDA ';
+    btn.textContent=flipped?'PRODUCTO EN PROMOCION':'VER MAPA DE TIENDA';
 }
 
 btn.onclick=toggleCard;
