@@ -101,7 +101,7 @@ body{
 .card{
     width:100%;
     max-width:320px;
-    height:180px;
+    height:220px;
     position:relative;
     transform-style:preserve-3d;
     transition:transform .9s cubic-bezier(.4,.2,.2,1);
