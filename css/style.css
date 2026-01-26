@@ -133,11 +133,19 @@ body{
 }
 /* FIN CARD 3D ===== */
 
-/* ===== BUTTON ===== */
+/* ===== MAPA BUTTON ===== */
+.actionsmapa{
+    display:flex;
+    
+    
+    
+}
+
+
 .btn-map{
     margin:18px auto;
     display:block;
-    width:30%;/*Tamaño boton*/
+    width:45%;/*Tamaño boton*/
     max-width:320px;
     padding:13px;
     /* background:#3b82f6; */
@@ -148,13 +156,14 @@ body{
     font-weight:600;
     cursor:pointer;
     transition:.3s;
+    border: 1px solid #ffffff; /* grosor | estilo | color */
 }
 
 .btn-map:hover{
     background:#2563eb;
     transform:translateY(-2px);
 }
-/* FIN BUTTON ===== */
+/* FIN MAPA BUTTON ===== */
 
 
 /* 2 BOTONES ACTIONS  ===== */
@@ -172,7 +181,7 @@ body{
     border-radius:18px;
     padding:16px 10px;
     text-align:center;
-    font-size:13px;
+    font-size:15px;
     font-weight:600;
     transition:.25s;
     border: 2px solid #ffffff; /* grosor | estilo | color */
