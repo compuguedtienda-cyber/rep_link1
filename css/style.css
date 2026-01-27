@@ -253,7 +253,7 @@ body{
 
 .slider-window {
   width: 100%;
-  height: 200px;
+  height: auto;
   overflow: hidden;
   background: #fff;
   border-radius: 10px;
@@ -266,7 +266,7 @@ body{
 
 .slider-track img {
   width: 100%;
-  height: 200px;
+  height: auto;
   flex-shrink: 0;
 }
 
@@ -278,7 +278,7 @@ body{
   background: none;
   border: none;
   font-size: 30px;
-  color: #0050ff;
+  color: transparent;
   cursor: pointer;
 }
 
