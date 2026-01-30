@@ -945,7 +945,7 @@ header .navbar {
 
     /* Desaparece los botones slider en modo celular */
     .testimonials-section .swiper-slide-button {
-    display:block
+    display:block;
 }
     /* FIN Desaparece los botones slider en modo celular */
 
