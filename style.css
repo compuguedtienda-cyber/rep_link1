@@ -559,7 +559,7 @@ header .navbar {
 }
 
 .testimonials-section .testimonial .user-image {
-    width: 280px;
+    width: 300px;
     height: 470px;
     object-fit: cover;
     margin-bottom: 25px;
@@ -945,7 +945,7 @@ header .navbar {
 
     /* Desaparece los botones slider en modo celular */
     .testimonials-section .swiper-slide-button {
-    display: none;
+    display:block
 }
     /* FIN Desaparece los botones slider en modo celular */
 
