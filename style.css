@@ -559,8 +559,8 @@ header .navbar {
 }
 
 .testimonials-section .testimonial .user-image {
-    width: 250px;
-    height: 450px;
+    width: 280px;
+    height: 470px;
     object-fit: cover;
     margin-bottom: 25px;
     border-radius: 1rem;
