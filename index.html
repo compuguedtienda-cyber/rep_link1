@@ -4,249 +4,228 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>COMPUGUED | Bio Link</title>
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     :root {
-      --bg: #0e0f13;
-      --card: #161821;
-      --text: #eaeaf0;
-      --muted: #9ca3af;
-      --primary: #25d366;
-      --accent: #4f46e5;
+      --bg:#0e0f13;
+      --card:rgba(22,24,33,.9);
+      --text:#eaeaf0;
+      --muted:#9ca3af;
+      --primary:#25d366;
+      --accent:#4f46e5;
     }
 
-    body.light {
-      --bg: #f4f6fb;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+    body{
+      background:radial-gradient(circle at top,#151827,#0b0d14);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+    .container{width:100%;max-width:420px;padding:16px}
+
+    /* TOP BAR */
+    .top-bar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:16px;
     }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
+    /* WEATHER WIDGET */
+    .weather{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(135deg,#1e293b,#0f172a);
+      padding:8px 12px;
+      border-radius:14px;
+      box-shadow:0 8px 22px rgba(0,0,0,.4);
+      animation:float 3s ease-in-out infinite;
+      font-size:12px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 420px;
-      padding: 16px;
+    .weather i{font-size:20px}
+
+    .weather .info{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
     }
 
-    /* Top buttons */
-    .top-actions {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 16px;
+    .weather .temp{font-weight:600}
+    .weather .time{font-size:11px;color:var(--muted)}
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-3px)}
     }
 
-    .icon-btn {
-      background: var(--card);
-      border: none;
-      color: var(--text);
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: transform 0.2s ease;
+    .icon-btn{
+      background:var(--card);
+      border:none;
+      color:var(--text);
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.2);
     }
 
-    .icon-btn:hover {
-      transform: scale(1.05);
+    /* HEADER */
+    .header{text-align:center;margin-bottom:20px}
+
+    .logo{
+      width:110px;height:110px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--primary));
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;font-weight:700;color:#fff;
+      margin:0 auto 12px;
     }
 
-    /* Header */
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
+    .header p{font-size:14px;color:var(--muted)}
+
+    /* SOCIALS */
+    .socials{display:flex;justify-content:center;gap:18px;margin:18px 0}
+    .socials a{color:var(--text);font-size:22px}
+
+    /* SLIDER */
+    .slider{overflow:hidden;border-radius:16px;margin-bottom:22px}
+    .slides{display:flex;transition:transform .6s ease}
+    .slides img{width:100%;height:190px;object-fit:cover;flex-shrink:0}
+
+    /* ACTIONS */
+    .actions{display:grid;gap:14px;margin-bottom:24px}
+    .action-btn{
+      display:flex;align-items:center;justify-content:center;
+      gap:10px;padding:14px;border-radius:14px;
+      font-size:15px;font-weight:500;
+      color:#fff;text-decoration:none;
     }
 
-    .logo {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--primary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: 700;
-      margin: 0 auto 12px;
-      color: #fff;
-    }
+    .whatsapp{background:var(--primary)}
+    .pdf{background:var(--accent)}
 
-    .header p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* Social icons */
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin: 18px 0;
-    }
-
-    .socials a {
-      color: var(--text);
-      font-size: 22px;
-      transition: color 0.2s ease;
-    }
-
-    .socials a:hover {
-      color: var(--accent);
-    }
-
-    /* Slider */
-    .slider {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      margin-bottom: 22px;
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.6s ease;
-    }
-
-    .slides img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* Main buttons */
-    .actions {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .action-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px;
-      border-radius: 14px;
-      font-size: 15px;
-      font-weight: 500;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .whatsapp {
-      background: var(--primary);
-    }
-
-    .pdf {
-      background: var(--accent);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        max-width: 520px;
-      }
-    }
+    footer{text-align:center;font-size:12px;color:var(--muted);line-height:1.6}
   </style>
 </head>
+
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="top-actions">
-      <button class="icon-btn" onclick="sharePage()"><i class="fas fa-share-alt"></i></button>
-      <button class="icon-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
-    </div>
-
-    <div class="header">
-      <div class="logo">CG</div>
-      <p>Tecnología a pedido · Laptops y accesorios · Chiclayo</p>
-    </div>
-
-    <div class="socials">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    </div>
-
-    <div class="slider">
-      <div class="slides" id="slides">
-        <img src="https://via.placeholder.com/800x400?text=Productos+Tecnológicos" alt="Slide 1">
-        <img src="https://via.placeholder.com/800x400?text=Laptops+y+Accesorios" alt="Slide 2">
-        <img src="https://via.placeholder.com/800x400?text=Atención+Personalizada" alt="Slide 3">
+  <div class="top-bar">
+    <div class="weather" id="weather">
+      <i class="fas fa-spinner fa-spin"></i>
+      <div class="info">
+        <span class="temp">--°C</span>
+        <span class="time">--:--</span>
       </div>
     </div>
 
-    <div class="actions">
-      <a class="action-btn whatsapp" href="https://wa.me/51926845127?text=Hola%20quiero%20consultar%20por%20sus%20productos" target="_blank">
-        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-      </a>
-      <a class="action-btn pdf" href="#" target="_blank">
-        <i class="fas fa-file-pdf"></i> Ver Catálogo PDF
-      </a>
-    </div>
-
-    <footer>
-      Calle 7 de enero 1299 – Chiclayo<br>
-      📞 926 845 127
-    </footer>
-
+    <button class="icon-btn" onclick="sharePage()">
+      <i class="fas fa-share-alt"></i>
+    </button>
   </div>
 
-  <script>
-    let index = 0;
-    const slides = document.getElementById('slides');
-    const total = slides.children.length;
+  <div class="header">
+    <div class="logo">CG</div>
+    <p>Tecnología a pedido · Laptops y accesorios · Chiclayo</p>
+  </div>
 
-    setInterval(() => {
-      index = (index + 1) % total;
-      slides.style.transform = `translateX(-${index * 100}%)`;
-    }, 3500);
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
 
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-    }
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://via.placeholder.com/800x400?text=Productos+Tecnológicos">
+      <img src="https://via.placeholder.com/800x400?text=Laptops+y+Accesorios">
+      <img src="https://via.placeholder.com/800x400?text=Atención+Personalizada">
+    </div>
+  </div>
 
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'COMPUGUED',
-          text: 'Catálogo de productos tecnológicos',
-          url: window.location.href
-        });
-      } else {
-        alert('Función de compartir no soportada en este navegador');
-      }
-    }
-  </script>
+  <div class="actions">
+    <a class="action-btn whatsapp" href="https://wa.me/51926845127" target="_blank">
+      <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+    </a>
+    <a class="action-btn pdf" href="#" target="_blank">
+      <i class="fas fa-file-pdf"></i> Ver Catálogo PDF
+    </a>
+  </div>
+
+  <footer>
+    Calle 7 de enero 1299 – Chiclayo<br>
+    📞 926 845 127
+  </footer>
+
+</div>
+
+<script>
+/* SLIDER */
+let index=0;
+const slides=document.getElementById('slides');
+setInterval(()=>{
+  index=(index+1)%slides.children.length;
+  slides.style.transform=`translateX(-${index*100}%)`;
+},3500);
+
+/* SHARE */
+async function sharePage(){
+  const data={title:'COMPUGUED',text:'Catálogo tecnológico',url:location.href};
+  if(navigator.share && window.isSecureContext){
+    try{await navigator.share(data);}catch{copyLink();}
+  }else{copyLink();}
+}
+function copyLink(){
+  navigator.clipboard.writeText(location.href)
+  .then(()=>alert('Enlace copiado'));
+}
+
+/* WEATHER + TIME */
+const tempEl=document.querySelector('.temp');
+const timeEl=document.querySelector('.time');
+const iconEl=document.querySelector('.weather i');
+
+function updateTime(){
+  timeEl.textContent=new Date().toLocaleTimeString('es-PE',{
+    timeZone:'America/Lima',
+    hour:'2-digit',
+    minute:'2-digit'
+  });
+}
+setInterval(updateTime,60000);updateTime();
+
+fetch('https://api.open-meteo.com/v1/forecast?latitude=-6.7714&longitude=-79.8409&current_weather=true')
+.then(r=>r.json())
+.then(d=>{
+  const t=Math.round(d.current_weather.temperature);
+  const c=d.current_weather.weathercode;
+  const h=new Date().getHours();
+  const night=h>=18||h<6;
+
+  let icon='fa-cloud',color='#94a3b8';
+  if(c===0){icon=night?'fa-moon':'fa-sun';color=night?'#cbd5f5':'#facc15'}
+  else if([61,63,65,80,81,82].includes(c)){icon='fa-cloud-rain';color='#60a5fa'}
+
+  iconEl.className=`fas ${icon}`;
+  iconEl.style.color=color;
+  tempEl.textContent=`${t}°C`;
+})
+.catch(()=>{tempEl.textContent='--°C'});
+</script>
 </body>
 </html>
