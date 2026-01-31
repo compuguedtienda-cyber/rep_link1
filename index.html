@@ -1,247 +1,252 @@
 <!DOCTYPE html>
 <html lang="es">
-    
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COMPUGUED | Bio Link</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R. ROCKY | Chiclayo</title>
-    <!-- Linking Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <!-- Linking Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
-    <!-- Linking Icono de web -->
-    <link rel="icon" href="images/logo/logoico.ico">
-    <!-- Linking General CSS -->
-    <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #0e0f13;
+      --card: #161821;
+      --text: #eaeaf0;
+      --muted: #9ca3af;
+      --primary: #25d366;
+      --accent: #4f46e5;
+    }
 
+    body.light {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+    }
 
-<!-- Etiquetas Open Graph (ogp.me) -->
-<meta property="og:title" content="REPRESENTACIONES ROCKY">
-<meta property="og:description" content="Asesoría y Venta de Equipos en Frio, Caliente y Neutro de Calidad.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://webrrocky.vercel.app/">
-<meta property="og:image" content="https://github.com/compuguedtienda-cyber/reprockytienda/blob/main/images/logo/logolink.png">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
 
-<!-- Twitter Card (compatible con X/Twitter) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="REPRESENTACIONES ROCKY">
-<meta name="twitter:description" content="Asesoría y Venta de Equipos en Frio, Caliente y Neutro de Calidad.>
-<meta name="twitter:image" content="https://github.com/compuguedtienda-cyber/reprockytienda/blob/main/images/logo/logolink.png">
-<!-- FIN DE ETIQUETAS LINK -->
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 16px;
+    }
+
+    /* Top buttons */
+    .top-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .icon-btn {
+      background: var(--card);
+      border: none;
+      color: var(--text);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .icon-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 auto 12px;
+      color: #fff;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Social icons */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 18px 0;
+    }
+
+    .socials a {
+      color: var(--text);
+      font-size: 22px;
+      transition: color 0.2s ease;
+    }
+
+    .socials a:hover {
+      color: var(--accent);
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: 22px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* Main buttons */
+    .actions {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .whatsapp {
+      background: var(--primary);
+    }
+
+    .pdf {
+      background: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 520px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
 
-<!-- HEADER / NAVBAR -->
-<header>
-    <nav class="navbar section-content claselogo">
-     <a href="#" class="nav-logo">
-        <img src="images/logo/logofondoazul.png" alt="Logo">
-        <h2 class="logo-text">R. ROCKY</h2>
-    </a>
-    <ul class="nav-menu">
-        <button id="menu-close-button" class="fas fa-times"></button>
-
-        <li class="nav-item">
-            <a href="#frio" class="nav-link">Frio</a>
-        </li>
-        
-        <li class="nav-item">
-            <a href="#calor" class="nav-link">Calor</a>
-        </li>
-
-        <li class="nav-item">
-            <a href="#neutro" class="nav-link">Neutro</a>
-        </li>
-        
-         <li class="nav-item">
-            <a href="#caja-section" class="nav-link">Catalogo</a>
-         </li>
-        
-        <li class="nav-item">
-            <a href="#contacto" class="nav-link">Contacto</a>
-        </li>
-
-    </ul>
-    <button id="menu-open-button" class="fas fa-bars"></button>
-    </nav>
-</header>
-<!-- FIN HEADER / NAVBAR -->
-
-caja-section
-
-
-<main>
-
-<!-- BANNER PRINCIPAL -->
- <section class="banner-principal-section">
-
-    <div class="caja-banner-principal">
-    
-        <div class="izquierda">
-            <img src="images/banner/ban1.png" alt="1">
-        </div>
-        
-        <div class="derecha zoom-suave">
-            <img src="images/z otros/derecha.png" alt="2">
-        </div>
-
-</div>
-
-</section>
-<!-- FIN BANNER -->
-
-
-
-
-<!-- CALOR-->
-<section class="testimonials-section" id="calor">
-    <h2 class="section-title">LINEA CALOR</h2>
-
-    <div class="section-content">
-        <div class="slider-container swiper">
-            <div class="slider-wrapper">
-                
-                <ul class="testimonials-list swiper-wrapper">
-
-                    <li class="testimonial swiper-slide">
-                        <img src="images/calor/Des01.jpg" alt="User" class="user-image">
-                    </li>
-
-                    <li class="testimonial swiper-slide">
-                        <img src="images/calor/Des02.jpg" alt="User" class="user-image">
-                    </li>
-
-                    <li class="testimonial swiper-slide">
-                        <img src="images/calor/Des03.jpg" alt="User" class="user-image">
-                    </li>
-                        
-                    <li class="testimonial swiper-slide">
-                        <img src="images/calor/Des04.jpg" alt="User" class="user-image">
-                    </li>
-                    
-                    <li class="testimonial swiper-slide">
-                        <img src="images/calor/Des05.jpg" alt="User" class="user-image">
-                    </li>
-                </ul>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-slide-button swiper-button-prev"></div>
-                <div class="swiper-slide-button swiper-button-next"></div>
-            </div>
-        </div>
+    <div class="top-actions">
+      <button class="icon-btn" onclick="sharePage()"><i class="fas fa-share-alt"></i></button>
+      <button class="icon-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
     </div>
- </section>
-<!-- FIN CALOR -->
 
-
-<!-- NEUTRO-->
-<section class="testimonials-section" id="neutro">
-    <h2 class="section-title">LINEA NEUTRO</h2>
-
-    <div class="section-content">
-        <div class="slider-container swiper">
-            <div class="slider-wrapper">
-                
-                <ul class="testimonials-list swiper-wrapper">
-
-                    <li class="testimonial swiper-slide">
-                        <img src="images/neutro/Des01.jpg" alt="User" class="user-image">
-                    </li>
-
-                    <li class="testimonial swiper-slide">
-                        <img src="images/neutro/Des02.jpg" alt="User" class="user-image">
-                    </li>
-
-                    <li class="testimonial swiper-slide">
-                        <img src="images/neutro/Des03.jpg" alt="User" class="user-image">
-                    </li>
-                        
-                    <li class="testimonial swiper-slide">
-                        <img src="images/neutro/Des01.jpg" alt="User" class="user-image">
-                    </li>
-                    
-                    <li class="testimonial swiper-slide">
-                        <img src="images/neutro/Des02.jpg" alt="User" class="user-image">
-                    </li>
-                </ul>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-slide-button swiper-button-prev"></div>
-                <div class="swiper-slide-button swiper-button-next"></div>
-            </div>
-        </div>
+    <div class="header">
+      <div class="logo">CG</div>
+      <p>Tecnología a pedido · Laptops y accesorios · Chiclayo</p>
     </div>
- </section>
-<!-- FIN NEUTRO -->
 
-<!-- CATALOGO BOTON Mas Productos-->
-     <section id="caja-section">
-      <div class="caja3 section-title2">
-        <h3>Mas Productos ?</h3>
-        
-        <div class="caja-boton">
-        <a href="#" class="boton-enlace btn">VER CATALOGO PDF</a>
-        </div>
+    <div class="socials">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="slider">
+      <div class="slides" id="slides">
+        <img src="https://via.placeholder.com/800x400?text=Productos+Tecnológicos" alt="Slide 1">
+        <img src="https://via.placeholder.com/800x400?text=Laptops+y+Accesorios" alt="Slide 2">
+        <img src="https://via.placeholder.com/800x400?text=Atención+Personalizada" alt="Slide 3">
       </div>
-    </section>
-<!-- FIN CATALOGO BOTON Mas Productos-->
-
-<!-- CONTACTO ACERCA DE | ABOUT -->
-      <section class="about-section" id="contacto">
-        
-        <div class="section-content">
-            
-            <div class="about-image-wrapper">
-                <img src="images/acerca/about-image.jpg" alt="About" class="about-image">
-            </div>
-            
-            <div class="about-details">
-                <h2 class="section-title">Gerente</h2>
-                <p class="text">Más de 10 años ofreciendo laptops, computadoras, impresoras y servicio técnico profesional. Calidad, garantía e innovación tecnológica a tu alcance.</p>
-
-                 <p class="renglon">💻 Ing. José Guevara</p>
-
-                <div class="social-link-list renglon2">
-                    <a href="https://www.facebook.com/profile.php?id=61579231040398" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="http://instagram.com/compugued/?hl=es-la" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/51926845127?text=Hola%20vengo%20desde%20tu%20página%20de%20Web" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-                
-           </div>
-
-        </div>
-     </section>
-
-<!-- FIN CONTACTO -->
-
-
-
-
-    
-
-
-
-<!-- FOOTER SECTION -->
-<footer class="footer-section" id="contact">
-    <div class="section-content footer-center">
-        <p class="copyright-text">7 de Enero N° 1299, Esq. Pedro Ruiz</p>
-    <p class="policy-text">
-        <a href="#" class="policy-link celular">979 970 100</a>
-    </p>
     </div>
-</footer>
-<!-- FIN FOOTER SECTION -->
-</main>
 
-<!-- Linking Swiper Script -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <div class="actions">
+      <a class="action-btn whatsapp" href="https://wa.me/51926845127?text=Hola%20quiero%20consultar%20por%20sus%20productos" target="_blank">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+      <a class="action-btn pdf" href="#" target="_blank">
+        <i class="fas fa-file-pdf"></i> Ver Catálogo PDF
+      </a>
+    </div>
 
-<!-- Linking Custom Script -->
-<script src="script.js"></script>
+    <footer>
+      Calle 7 de enero 1299 – Chiclayo<br>
+      📞 926 845 127
+    </footer>
 
+  </div>
+
+  <script>
+    let index = 0;
+    const slides = document.getElementById('slides');
+    const total = slides.children.length;
+
+    setInterval(() => {
+      index = (index + 1) % total;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }, 3500);
+
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+
+    function sharePage() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'COMPUGUED',
+          text: 'Catálogo de productos tecnológicos',
+          url: window.location.href
+        });
+      } else {
+        alert('Función de compartir no soportada en este navegador');
+      }
+    }
+  </script>
 </body>
-
 </html>
